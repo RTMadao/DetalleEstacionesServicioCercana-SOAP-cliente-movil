@@ -1,2 +1,2 @@
-# DetalleEstacionesServicioCercana-SOAP-cliente-movil
-Aplicación móvil para visualizar el precio y mas detalles de las estaciones de servicio cercanas.
+# Simulacion-termometro-aleatorio
+aplicacion realizada con vue js para simular el ambiente por medidas aleatorias en un termometro.
