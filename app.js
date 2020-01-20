@@ -237,7 +237,7 @@ var listaPreguntas = [
             },
             {
                 id: 3,
-                texto: 'c- Guerra de los Dos Pedros',
+                texto: 'c- Guerra del Golfo',
                 esCorrecta: false
             }
         ]
@@ -1141,6 +1141,48 @@ var listaPreguntas = [
             {
                 id: 3,
                 texto: 'c- 4000 km/s',
+                esCorrecta: false
+            }
+        ]
+    },
+    {
+        id: 51,
+        pregunta: '¡Felicidades, has ganado varios puntos!',
+        opciones: [
+            {
+                id: 1,
+                texto: 'a- ¿En serio?',
+                esCorrecta: true
+            },
+            {
+                id: 2,
+                texto: 'b- ¡Gracias!',
+                esCorrecta: true
+            },
+            {
+                id: 3,
+                texto: 'c- ¿Cuánto?',
+                esCorrecta: true
+            }
+        ]
+    },
+    {
+        id: 52,
+        pregunta: '¡Chale, has perdido varios puntos!',
+        opciones: [
+            {
+                id: 1,
+                texto: 'a- Espera... ¿Qué?',
+                esCorrecta: false
+            },
+            {
+                id: 2,
+                texto: 'b- D:',
+                esCorrecta: false
+            },
+            {
+                id: 3,
+                texto: 'c- ¿Esto se podía?',
                 esCorrecta: false
             }
         ]
