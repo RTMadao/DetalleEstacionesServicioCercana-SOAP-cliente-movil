@@ -17,6 +17,7 @@
             <div class="col">
                 <div>
                     <div class="border  mt-5 mx-5" style="width: 50rem; height: 25rem;">
+                        <div style="text-align: center"> <h2>¡Es turno de <div v-if="jugador1.nombre === jugador1.nombre" style="color: #3a71c9;">{{jugador1.nombre}}</div>!</h2> </div>
                         <h1 v-if="pregunta.length > 0" class="mt-5" style="text-align: center">{{pregunta[0].pregunta}}</h1>
                         <h3 v-if="pregunta.length > 0" style="text-align: center">Puntos: {{puntos}}</h3>
                     </div>
@@ -30,26 +31,26 @@
                 </div>
             </div>
             <div class="col mt-5 mr-5 px-5 border">
-                <div class="d-block border mt-3" style="height: 15rem;">
-                    <h1 style="text-align: center" v-if="jugador1.nombre===''" >Jugador 1</h1>
-                    <h1 style="text-align: center" v-else class="pr-2">{{jugador1.nombre}}</h1>
+                <div class="d-block  mt-3" style="height: 15rem;">
+                    <h1 style="text-align: center; color: #3a71c9;" v-if="jugador1.nombre===''" >Jugador 1</h1>
+                    <h1 style="text-align: center; color: #3a71c9;" v-else class="pr-2">{{jugador1.nombre}}</h1>
                     <h3 class="pr-2">Preguntas acertadas: {{jugador1.preguntasAcertadas}}</h3>
                     <h4 class="pr-2">{{jugador1.puntos}}</h4>
                     <div class="progress">
                         <div id="j1" class="progress-bar progress-bar-striped mr-5" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
-                <div class="d-block border mt-3" style="height: 15rem;">
-                    <h1 v-if="jugador2.nombre===''" style="text-align: center" >Jugador 2</h1>
-                    <h1 v-else style="text-align: center">{{jugador2.nombre}}</h1>
+                <div class="d-block  mt-3" style="height: 15rem;">
+                    <h1 v-if="jugador2.nombre===''" style="text-align: center; color: #e81010" >Jugador 2</h1>
+                    <h1 v-else style="text-align: center; color: #e81010">{{jugador2.nombre}}</h1>
                     <h3>Preguntas acertadas: {{jugador2.preguntasAcertadas}}</h3>
                     <h4>{{jugador2.puntos}}</h4>
                     <div class="progress">
-                        <div id="j2" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div id="j2" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%; color: #e81010" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
-                <div class="d-block border  mt-3">
-                    <button data-toggle="modal" data-target="#formularioJugadores" v-on:click="nuevaPartida" type="button" class="btn btn-primary" style="align-items: center;" >Nueva Partida</button>  
+                <div class="d-block mt-3">
+                    <button data-toggle="modal" data-target="#formularioJugadores" v-on:click="nuevaPartida" type="button" class="btn btn-primary btn-lg btn-block" style="align-items: center;" >Nueva Partida</button>  
                     <!-- Modal -->
                     <div class="modal fade" id="formularioJugadores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">

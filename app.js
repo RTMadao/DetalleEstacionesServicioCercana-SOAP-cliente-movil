@@ -22,7 +22,8 @@ var app = new Vue({
             icono: ''
         },
         preguntas: [],
-        pregunta:[{}],
+        pregunta:[],
+        puntos: 0,
         turno: 1
     },
     methods:{
