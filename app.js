@@ -60,6 +60,7 @@ var app = new Vue({
                     this.jugador1.preguntasAcertadas ++
                     if (this.jugador1.puntos >= 100){
                         this.jugador1.puntos = 100
+                        barraProgreso('j1', this.jugador1.puntos)
                         alert(this.jugador1.nombre + ' ha ganado!!!')
                     }                    
                     barraProgreso('j1', this.jugador1.puntos)
@@ -69,6 +70,7 @@ var app = new Vue({
                     this.jugador2.preguntasAcertadas ++
                     if (this.jugador2.puntos >= 100){
                         this.jugador2.puntos = 100
+                        barraProgreso('j2', this.jugador2.puntos)
                         alert(this.jugador2.nombre + ' ha ganado!!!')
                     }                    
                     barraProgreso('j2', this.jugador2.puntos)
