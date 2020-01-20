@@ -17,7 +17,7 @@
             <div class="col">
                 <div>
                     <div class="border  mt-5 mx-5" style="width: 50rem; height: 25rem;">
-                        <div style="text-align: center"> <h2>¡Es turno de <div v-if="jugador1.nombre === jugador1.nombre" style="color: #3a71c9;">{{jugador1.nombre}}</div>!</h2> </div>
+                        <div style="text-align: center" > <h2 style="display:inline">¡Es turno de </h2> <h2 v-if="jugador1.nombre === jugador1.nombre && jugador1.nombre !== ''" style="color: #3a71c9; display:inline">{{jugador1.nombre}}</h2> <h2 v-if="jugador1.nombre === jugador1.nombre && jugador1.nombre === ''" style="color: #3a71c9; display:inline">Jugador 1</h2><h2 v-if="jugador2.nombre === jugador2.nombre && jugador2.nombre !== ''" style="color: #e81010; display:inline">{{jugador2.nombre}}</h2><h2 v-if="jugador2.nombre === jugador2.nombre && jugador2.nombre === ''" style="color: #e81010; display:inline">Jugador 2</h2><h2 style="display:inline">!</h2> </div>
                         <h1 v-if="pregunta.length > 0" class="mt-5" style="text-align: center">{{pregunta[0].pregunta}}</h1>
                         <h3 v-if="pregunta.length > 0" style="text-align: center">Puntos: {{puntos}}</h3>
                     </div>
