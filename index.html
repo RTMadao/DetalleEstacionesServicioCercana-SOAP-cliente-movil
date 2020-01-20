@@ -17,12 +17,15 @@
             <div class="col">
                 <div>
                     <div class="border  mt-5 mx-5" style="width: 50rem; height: 25rem;">
-                        <h1  class="mt-5" style="text-align: center">{{pregunta[0].pregunta}}</h1>
+                        <h1 v-if="pregunta.length > 0" class="mt-5" style="text-align: center">{{pregunta[0].pregunta}}</h1>
+                        <h3 v-if="pregunta.length > 0" style="text-align: center">Puntos: {{puntos}}</h3>
                     </div>
                 </div>
                 <div>
                     <div class="border mt-5 mx-auto" style="width: 50rem; height: 14rem; align-items: center;">
-                        
+                        <button v-if="pregunta.length > 0" v-on:click="respuesta(0)"  type="button" class="btn btn-primary btn-lg btn-block">{{pregunta[0].opciones[0].texto}}</button>
+                        <button v-if="pregunta.length > 0" v-on:click="respuesta(1)" type="button" class="btn btn-primary btn-lg btn-block">{{pregunta[0].opciones[1].texto}}</button>
+                        <button v-if="pregunta.length > 0" v-on:click="respuesta(2)" type="button" class="btn btn-primary btn-lg btn-block">{{pregunta[0].opciones[2].texto}}</button>
                   </div>
                 </div>
             </div>

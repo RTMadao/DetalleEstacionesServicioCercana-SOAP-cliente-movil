@@ -22,7 +22,8 @@ var app = new Vue({
             icono: ''
         },
         preguntas: [],
-        pregunta:[{}],
+        pregunta:[],
+        puntos:0,
         turno: 1
     },
     methods:{
@@ -44,13 +45,50 @@ var app = new Vue({
                 nombre: '',
                 icono: ''
             }  
-            this.pregunta = null
+            this.pregunta = []
             this.preguntas = [] 
         },
         preguntar(){
             let n = obtenerNumero(this.preguntas.length,0)
-            console.log(n)
             this.pregunta = this.preguntas.splice(n,1);
+            this.puntos = obtenerNumero(16,5);
+        },
+        respuesta(opcion){
+            if(this.pregunta[0].opciones[opcion].esCorrecta){
+                if(this.turno == 1){
+                    this.jugador1.puntos += this.puntos;
+                    this.jugador1.preguntasAcertadas ++
+                    if (this.jugador1.puntos >= 100){
+                        this.jugador1.puntos = 100
+                        alert(this.jugador1.nombre + ' ha ganado!!!')
+                    }                    
+                    barraProgreso('j1', this.jugador1.puntos)
+                }
+                else{
+                    this.jugador2.puntos += this.puntos;
+                    this.jugador2.preguntasAcertadas ++
+                    if (this.jugador2.puntos >= 100){
+                        this.jugador2.puntos = 100
+                        alert(this.jugador2.nombre + ' ha ganado!!!')
+                    }                    
+                    barraProgreso('j2', this.jugador2.puntos)
+                }
+            }
+            else{
+                if(this.turno == 1){
+                    this.jugador1.puntos -= this.puntos;
+                    if (this.jugador1.puntos < 0) this.jugador1.puntos = 0
+                    barraProgreso('j1', this.jugador1.puntos)
+                }
+                else{
+                    this.jugador2.puntos -= this.puntos;
+                    if (this.jugador2.puntos < 0) this.jugador2.puntos = 0
+                    barraProgreso('j2', this.jugador2.puntos)
+                }
+            }
+            if(this.turno == 1) this.turno = 2
+            else this.turno = 1 
+            this.preguntar();
         }
     }
 
@@ -115,7 +153,8 @@ var listaPreguntas = [
             },
             {
                 id: 3,
-                texto: 'c- Estados Unidos'
+                texto: 'c- Estados Unidos',
+                esCorrecta: false
             }
         ]
     },
